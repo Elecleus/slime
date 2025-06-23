@@ -18,7 +18,7 @@ pub fn from_images(my_args: MyArgs) -> Result<()> {
         .unwrap()
         .iter()
         .map(|name| {
-            imread(name, ImreadModes::IMREAD_COLOR_RGB.into()).map_err(|e| anyhow::Error::new(e))
+            imread(name, ImreadModes::IMREAD_COLOR_BGR.into()).map_err(|e| anyhow::Error::new(e))
         })
         .collect::<Result<Vec<Mat>>>()?;
 
